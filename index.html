@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Country Finder </title>
+<link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <h1>Country Finder</h1>
+        <p>Look up any country: its capital, population, language and currency.</p>
+
+        <div class="controls">
+            <input id="search" type="search" placeholder="Search by country name" aria-label="search by country name">
+            <select id="region" aria-label="filter by region">
+                <option value="">Filter by Region</option>
+                <option>Africa</option>
+                <option>Americas</option>
+                <option>Asia</option>
+                <option>Europe</option>
+                <option>Oceania</option>
+            </select>
+            <select id="sort" aria-label="sort countries">
+                <option value="name">Sort: Name (A-Z)</option>
+                <option value="population">Sort: Population (High to Low)</option>
+
+            </select>
+        </div>
+
+        <p id="message" aria-live="polite">Loading...</p>
+        <div id="results"></div>
+
+        <script src="config.js"></script>
+        <script src="app.js"></script>
+    </body>
+
+</html>

@@ -18,7 +18,7 @@ if (saved && saved.data.length > 0 && Date.now() - saved.time < 3600000) {
     
 
 
-    const response = await fetch(API_URL + "&api-key=" + API_KEY);
+    const response = await fetch(API_URL,{headers: {"Authorization": "Bearer " + API_KEY}});
 
 if (!response.ok) throw new Error("The API returned an error (" + response.status + ").");
 const data = await response.json();

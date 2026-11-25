@@ -4,7 +4,7 @@ Country Finder is a website for looking up countries. You can search by name, fi
 
 - **Live site:** https://cumurerwa.tech (also https://www.cumurerwa.tech)
 - **Load balancer IP:** http://18.132.10.117
-- **Demo video:** PASTE_YOUR_YOUTUBE_LINK_HERE
+- **Demo video:** https://youtu.be/_1v51DRBA0I
 - **Repository:** https://github.com/cumurerwa-bot/country-finder
 
 ## Purpose

@@ -37,3 +37,23 @@ Country Finder is a website for looking up countries. You can search by name, fi
  "sudo mv /tmp/config.js /var/www/country-finder/config.js"
 
  The server IPs are added to CORS allowed origins on the API key, otherwise the API returns 403
+
+ ## Configure the load balancer (LB01, 18.132.10.117)
+ Run on LB01:
+
+ sudo apt update && sudo apt install -y nginx git 
+ git clone https://github.com/cumurerwa-bot/country-finder.git ~/country-finder
+ sudo cp ~/country-finder/deploy/lb-nginx.conf /etc/nginx/sites-available/country-finder
+ sudo sed -i 's/WEB01_IP/18.170.66.177/;s/WEB02_IP/52.56.73.27/' /etc/nginx/sites-available/country-finder
+ sudo In -sf /etc/nginx/sites- available/country-finder /etc/nginx/sites-enabled/
+ sudo ln -sf /etc/nginx/sites-available/country-finder /etc/nginx/sites-enabled/
+ sudo rm -f /etc/nginx/sites-enabled/default
+ sudo nginx -t && sudo systemctl reload nginx
+
+ nginx sends requests to web01 and web02 in turn (round robin). If one server fails, requests go to the other.
+
+ ## Test load balancing 
+ Run from your computer:
+
+ for i in 1 2 3 4; do curl -sI http://18.132.10.117 | grep -i x-served-by; done 
+ The X-Served-By header should alternate between the two web servers.

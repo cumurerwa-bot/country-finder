@@ -1,1 +1,1 @@
-const API_KEY = "rc_live_188321b8e4494538a65bf597b7741d67"
+const API_KEY = "YOUR_API_KEY_HERE"; 

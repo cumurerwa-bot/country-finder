@@ -57,3 +57,14 @@ Country Finder is a website for looking up countries. You can search by name, fi
 
  for i in 1 2 3 4; do curl -sI http://18.132.10.117 | grep -i x-served-by; done 
  The X-Served-By header should alternate between the two web servers.
+
+ ## Credits 
+ -REST Countries API by the REST Countries team: https://restcountries.com 
+ -Nginx documentation:
+ https://nginx.org/en/docs/
+ -live Server extension by Ritwick Dey, used for local testing
+ -An AI assistant was used for guidance and debugging
+   
+   ## Challenges
+   -The API I first planned to use stopped working without a key, so I moved to the v5 API  and kept the key in a git-ignored config.js file 
+   -opening the page directly from a file gave "failed to fetch", so I used the live server extension and added localhost to the key's CORS allowed origins
